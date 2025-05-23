@@ -48,70 +48,38 @@ Si aún no lo tenemos, deberemos instalar Angular Material en nuestro proyecto:
     - MAT_DIALOG_DATA: Este token de inyección se utiliza para recibir datos que el componente que abre el modal le pasa.
 
 
-5. Configurar un método para cerra el modal
+6. Configurar un método para cerra el modal
 ```typescript
 onCerrarClick(): void {
   this.dialogRef.close(); 
   }
 ```
-- this.dialogRef.close() utiliza la referencia del dialogo creado para poder cerrarlo mediante el método close(). 
+this.dialogRef.close() utiliza la referencia del dialogo creado para poder cerrarlo mediante el método close(). 
 
-> [!TIP]
-> Si quisieramos pasar datos al componente que llama al modal deberiamos de pasarlos como parametro dentro del close
-this.dialogRef.close(dato)
+  > [!TIP]
+  > Si quisieramos pasar datos al componente que llama al modal deberiamos de pasarlos como parametro dentro del close
+  this.dialogRef.close(dato)
+
+
+7. Crear el contenido del modal
+```html
+<div mat-dialog-title style="display: flex; justify-content: space-between; align-items: center;">
+  Titulo del Modal 
+</div>
+<div mat-dialog-content>
+    <p>{{ data.mensaje }}</p>
+</div>
+<div mat-dialog-actions align="end">
+    <button mat-button (click)="onCerrarClick()">Entendido</button>
+</div>
+```
 
 
 
-4. Crear un componente para el contenido del modal
-En Angular Material, el contenido de un modal es un componente de Angular normal. Esto es una práctica recomendada porque permite que el contenido del modal tenga su propia lógica, inyecciones de dependencia, etc.
 
-Bash
 
-ng generate component components/my-modal-content --skip-tests --inline-style
-src/app/components/my-modal-content/my-modal-content.component.ts
 
-TypeScript
 
-import { Component, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-
-@Component({
-  selector: 'app-my-modal-content',
-  template: `
-    <h2 mat-dialog-title>{{ data?.title || 'Título por Defecto' }}</h2>
-    <mat-dialog-content class="mat-typography">
-      <p>{{ data?.message || 'Este es el contenido por defecto del modal.' }}</p>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Nombre</mat-label>
-        <input matInput [(ngModel)]="name">
-      </mat-form-field>
-    </mat-dialog-content>
-    <mat-dialog-actions align="end">
-      <button mat-button (click)="onNoClick()">Cancelar</button>
-      <button mat-raised-button color="primary" [mat-dialog-close]="name" cdkFocusInitial>Aceptar</button>
-    </mat-dialog-actions>
-  `,
-  styles: [`
-    /* Puedes añadir estilos específicos para tu modal aquí */
-    mat-dialog-content {
-      padding: 20px 0; /* Ajusta el padding si es necesario */
-    }
-  `]
-})
-export class MyModalContentComponent {
-  name: string = '';
-
-  constructor(
-    public dialogRef: MatDialogRef<MyModalContentComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { title?: string, message?: string } // Para recibir datos del componente que abre el modal
-  ) {}
-
-  onNoClick(): void {
-    // Cuando el usuario hace clic en "Cancelar", cierra el modal sin pasar ningún valor
-    this.dialogRef.close();
-  }
-}
 Puntos importantes del componente de contenido:
 
 MAT_DIALOG_DATA: Este token de inyección se utiliza para recibir datos que el componente que abre el modal le pasa.
