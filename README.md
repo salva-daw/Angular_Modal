@@ -60,6 +60,9 @@ Si aún no lo tenemos, deberemos instalar Angular Material en nuestro proyecto:
     > Si quisieramos pasar datos al componente que llama al modal deberiamos de pasarlos como parametro dentro del close
     this.dialogRef.close(dato)
 
+> 💡 **Consejo:** ¡Recuerda dejar una línea en blanco entre el tip y el texto siguiente para evitar que se sangre!
+>
+
 7. Crear el contenido del modal
     ```html
     <div mat-dialog-title style="display: flex; justify-content: space-between; align-items: center;">
