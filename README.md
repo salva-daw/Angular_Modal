@@ -56,8 +56,8 @@ Si aún no lo tenemos, deberemos instalar Angular Material en nuestro proyecto:
     ```
     this.dialogRef.close() utiliza la referencia del dialogo creado para poder cerrarlo mediante el método close(). 
 
-  > [!NOTE]  
-  > Si quisieramos pasar datos al componente que llama al modal deberiamos de pasarlos como parametro dentro del método close this.dialogRef.close(dato)
+    > [!NOTE]  
+    > Si quisieramos pasar datos al componente que llama al modal deberiamos de pasarlos como parametro dentro del método close this.dialogRef.close(dato)
 
 
 
