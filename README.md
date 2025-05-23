@@ -61,17 +61,17 @@ Si aún no lo tenemos, deberemos instalar Angular Material en nuestro proyecto:
     this.dialogRef.close(dato)
 
 7. Crear el contenido del modal
-  ```html
-  <div mat-dialog-title style="display: flex; justify-content: space-between; align-items: center;">
-    Titulo del Modal 
-  </div>
-  <div mat-dialog-content>
-      <p>{{ data.mensaje }}</p>
-  </div>
-  <div mat-dialog-actions align="end">
-      <button mat-button (click)="onCerrarClick()">Entendido</button>
-  </div>
-  ```
+    ```html
+    <div mat-dialog-title style="display: flex; justify-content: space-between; align-items: center;">
+      Titulo del Modal 
+    </div>
+    <div mat-dialog-content>
+        <p>{{ data.mensaje }}</p>
+    </div>
+    <div mat-dialog-actions align="end">
+        <button mat-button (click)="onCerrarClick()">Entendido</button>
+    </div>
+    ```
 
 
 
