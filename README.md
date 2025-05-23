@@ -56,8 +56,12 @@ onCerrarClick(): void {
 ```
 - this.dialogRef.close() utiliza la referencia del dialogo creado para poder cerrarlo mediante el método close(). 
 
-💡 **Tip:** Si quisieramos pasar datos al componente que llama al modal deberiamos de pasarlos como parametro dentro del close
+<div style="background-color: #fff3cd>
+💡 Si quisieramos pasar datos al componente que llama al modal deberiamos de pasarlos como parametro dentro del close
 this.dialogRef.close(dato)
+</div>
+
+
 
 4. Crear un componente para el contenido del modal
 En Angular Material, el contenido de un modal es un componente de Angular normal. Esto es una práctica recomendada porque permite que el contenido del modal tenga su propia lógica, inyecciones de dependencia, etc.
