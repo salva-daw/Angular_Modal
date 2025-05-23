@@ -56,11 +56,9 @@ onCerrarClick(): void {
 ```
 - this.dialogRef.close() utiliza la referencia del dialogo creado para poder cerrarlo mediante el método close(). 
 
-<div style="background-color: #fff3cd>
-💡 Si quisieramos pasar datos al componente que llama al modal deberiamos de pasarlos como parametro dentro del close
+> [!NOTE]
+> 💡 **Tip:** Si quisieramos pasar datos al componente que llama al modal deberiamos de pasarlos como parametro dentro del close
 this.dialogRef.close(dato)
-
-</div>
 
 
 
