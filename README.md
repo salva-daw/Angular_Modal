@@ -60,7 +60,6 @@ this.dialogRef.close() utiliza la referencia del dialogo creado para poder cerra
   > Si quisieramos pasar datos al componente que llama al modal deberiamos de pasarlos como parametro dentro del close
   this.dialogRef.close(dato)
 
-
 7. Crear el contenido del modal
 ```html
 <div mat-dialog-title style="display: flex; justify-content: space-between; align-items: center;">
