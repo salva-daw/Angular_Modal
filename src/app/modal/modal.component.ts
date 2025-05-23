@@ -1,7 +1,6 @@
 import { Component, Inject } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button'; // Para el botón de cerrar
 import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog'; // Importa MatDialogModule, MAT_DIALOG_DATA y MatDialogRef
-import { MatIconModule } from '@angular/material/icon'; // Importa MatIconModule para el icono
+
 
 export interface Cliente {
   dni: string;
@@ -10,7 +9,7 @@ export interface Cliente {
 
 @Component({
   selector: 'app-modal',
-  imports: [MatDialogModule, MatButtonModule, MatIconModule], // Importa MatDialogModule y MatButtonModule
+  imports: [MatDialogModule],
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.css'
 })
