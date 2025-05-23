@@ -69,6 +69,8 @@ Los pasos a seguir serán los siguientes:
    </div>
    ```
 
+   💡 Texto con idea
+
    > [!NOTE]  
    > Salva information that users should take into account, even when skimming.
 
