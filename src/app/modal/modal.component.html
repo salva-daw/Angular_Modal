@@ -1,0 +1,13 @@
+<div mat-dialog-title style="display: flex; justify-content: space-between; align-items: center;">
+    <span>Aviso Importante</span>
+    <button mat-icon-button (click)="onCerrarClick()">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+
+<div mat-dialog-content>
+    <p>{{ data.mensaje }}</p>
+</div>
+<div mat-dialog-actions align="end">
+    <button mat-button (click)="onCerrarClick()">Entendido</button>
+</div>
