@@ -56,7 +56,7 @@ Si aún no lo tenemos, deberemos instalar Angular Material en nuestro proyecto:
     ```
     this.dialogRef.close() utiliza la referencia del dialogo creado para poder cerrarlo mediante el método close(). 
 
-    [!NOTE] 
+    > [!NOTE] 
     > Si quisieramos pasar datos al componente que llama al modal deberiamos de pasarlos como parametro dentro del close
     this.dialogRef.close(dato)
 
@@ -77,6 +77,22 @@ Si aún no lo tenemos, deberemos instalar Angular Material en nuestro proyecto:
     ```
 
 
+
+
+> [!NOTE]  
+> Highlights information that users should take into account, even when skimming.
+
+> [!TIP]
+> Optional information to help a user be more successful.
+
+> [!IMPORTANT]  
+> Crucial information necessary for users to succeed.
+
+> [!WARNING]  
+> Critical content demanding immediate user attention due to potential risks.
+
+> [!CAUTION]
+> Negative potential consequences of an action.
 
 
 
