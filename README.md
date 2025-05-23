@@ -70,7 +70,7 @@ Los pasos a seguir serán los siguientes:
    ```
 
    > [!NOTE]  
-   > Highlights information that users should take into account, even when skimming.
+   > Salva information that users should take into account, even when skimming.
 
 > [!TIP]
 > Optional information to help a user be more successful.
