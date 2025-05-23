@@ -49,29 +49,29 @@ Si aún no lo tenemos, deberemos instalar Angular Material en nuestro proyecto:
 
 
 6. Configurar un método para cerra el modal
-  ```typescript
-  onCerrarClick(): void {
-    this.dialogRef.close(); 
-    }
-  ```
-  this.dialogRef.close() utiliza la referencia del dialogo creado para poder cerrarlo mediante el método close(). 
+    ```typescript
+    onCerrarClick(): void {
+      this.dialogRef.close(); 
+      }
+    ```
+    this.dialogRef.close() utiliza la referencia del dialogo creado para poder cerrarlo mediante el método close(). 
 
     > [!TIP]
     > Si quisieramos pasar datos al componente que llama al modal deberiamos de pasarlos como parametro dentro del close
     this.dialogRef.close(dato)
 
 7. Crear el contenido del modal
-```html
-<div mat-dialog-title style="display: flex; justify-content: space-between; align-items: center;">
-  Titulo del Modal 
-</div>
-<div mat-dialog-content>
-    <p>{{ data.mensaje }}</p>
-</div>
-<div mat-dialog-actions align="end">
-    <button mat-button (click)="onCerrarClick()">Entendido</button>
-</div>
-```
+  ```html
+  <div mat-dialog-title style="display: flex; justify-content: space-between; align-items: center;">
+    Titulo del Modal 
+  </div>
+  <div mat-dialog-content>
+      <p>{{ data.mensaje }}</p>
+  </div>
+  <div mat-dialog-actions align="end">
+      <button mat-button (click)="onCerrarClick()">Entendido</button>
+  </div>
+  ```
 
 
 
