@@ -58,7 +58,7 @@ Los pasos a seguir serán los siguientes:
       }
     ```
 > [!NOTE]  
-> Si quisieramos pasar datos al componente que llama al modal deberiamos de pasarlos como parametro dentro del método close this.dialogRef.close(dato)
+> Si quisieramos pasar datos al componente que llama al modal deberiamos de pasarlos como parametro dentro del método close
 
    ```typescript
       modalCerrarDatos(): void {
@@ -68,7 +68,7 @@ Los pasos a seguir serán los siguientes:
    ```
 7. Crear el contenido del modal
 
-   ```html
+  ```html
    <div mat-dialog-title style="display:flex; justify-content:space-between; align-items:center;">
       Titulo del Modal
    </div>
@@ -79,7 +79,8 @@ Los pasos a seguir serán los siguientes:
     <button mat-button (click)="modalCerrar()">Cerrar</button>
     <button mat-button (click)="modalCerrarDatos()">Cerrar con Datos</button>
   </div>
-    ```
+  ```
+   
 
    💡 Texto con idea
 
