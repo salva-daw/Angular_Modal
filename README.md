@@ -59,12 +59,13 @@ Los pasos a seguir serán los siguientes:
     ```
 > [!NOTE]  
 > Si quisieramos pasar datos al componente que llama al modal deberiamos de pasarlos como parametro dentro del método close this.dialogRef.close(dato)
-    ```typescript
+
+   ```typescript
       modalCerrarDatos(): void {
         let dato = 'Valencia'
         this.dialogRef.close(dato);
       }
-    ```
+   ```
 7. Crear el contenido del modal
 
    ```html
@@ -78,7 +79,7 @@ Los pasos a seguir serán los siguientes:
     <button mat-button (click)="modalCerrar()">Cerrar</button>
     <button mat-button (click)="modalCerrarDatos()">Cerrar con Datos</button>
   </div>
-   ```
+    ```
 
    💡 Texto con idea
 
