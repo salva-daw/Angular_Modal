@@ -128,7 +128,7 @@ Los pasos a seguir serán los siguientes:
     ```
 
 9. Definimos en el HTML del AppComponent un boton para poder abrir el modal
-    ```typescript
+    ```html
     <button mat-raised-button color="primary" (click)="abrirDialogo()">Abrir</button>
     ````
     
