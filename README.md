@@ -60,7 +60,8 @@ Los pasos a seguir serán los siguientes:
 7. Crear el contenido del modal
 
    ```html
-   <div mat-dialog-title style="display: flex; justify-content: space-between; align-items: center;">Titulo del Modal</div>
+   <div mat-dialog-title style="display: flex; justify-content: space-between; align-items: center;">
+   Titulo del Modal</div>
    <div mat-dialog-content>
      <p>{{ data.mensaje }}</p>
    </div>
