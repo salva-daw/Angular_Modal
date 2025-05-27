@@ -11,7 +11,7 @@ Los pasos a seguir serán los siguientes:
   ```bash
   ng add @angular/material
   ```
-  Durante la instalación, nos preguntará sobre un tema, tipografía y si queremos incluir animaciones. Eligimos las opciones que prefiramos.
+    Durante la instalación, nos preguntará sobre un tema, tipografía y si queremos incluir animaciones. Eligimos las opciones que prefiramos.
 
 2. Creamos el componente que utilizaremos como ventana modal.
 
