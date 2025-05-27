@@ -20,13 +20,14 @@ Durante la instalación, nos preguntará sobre un tema, tipografía y si queremo
 ng g c modal
 ```
 
-3.  Importar el módulo MatDialogModule en el fichero modal.ts.
-    ```typescript
-    import { Component, Inject } from "@angular/core";
-    import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog"; 
-    import { MatButtonModule } from '@angular/material/button';
-    ```
-    Importamos también el MatButtonModule para utilizar botones de Angular Material
+3. Importar el módulo MatDialogModule en el fichero modal.ts
+
+```typescript
+import { Component, Inject } from "@angular/core";
+import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog"; 
+import { MatButtonModule } from '@angular/material/button';
+```
+Importamos también el MatButtonModule para utilizar botones de Angular Material
 
 4.  Cofigurar el decorador @component con MatDialogModule
     ```typescript
