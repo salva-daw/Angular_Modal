@@ -23,13 +23,16 @@ Los pasos a seguir serán los siguientes:
 3.  Importar el módulo MatDialogModule en el fichero modal.ts.
     ```typescript
     import { Component, Inject } from "@angular/core";
-    import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog"; // Importa MatDialogModule, MAT_DIALOG_DATA y MatDialogRef
+    import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog"; 
+    import { MatButtonModule } from '@angular/material/button';
     ```
+    Importamos también el MatButtonModule para utilizar botones de Angular Material
+
 4.  Cofigurar el decorador @component con MatDialogModule
     ```typescript
     @Component({
     selector: 'app-modal',
-    imports: [MatDialogModule],
+    imports: [MatDialogModule, MatButtonModule],
     templateUrl: './modal.component.html',
     styleUrl: './modal.component.css'
     })
@@ -50,13 +53,18 @@ Los pasos a seguir serán los siguientes:
 
     Utilizamos la referencia this.dialogRef creada en el constructor para poder cerrarlo mediante el método close().
     ```typescript
-    onCerrarClick(): void {
+      modalCerrar(): void {
       this.dialogRef.close();
       }
     ```
-    > [!NOTE]  
-    > Si quisieramos pasar datos al componente que llama al modal deberiamos de pasarlos como parametro dentro del método close this.dialogRef.close(dato)
-
+> [!NOTE]  
+> Si quisieramos pasar datos al componente que llama al modal deberiamos de pasarlos como parametro dentro del método close this.dialogRef.close(dato)
+    ```typescript
+      modalCerrarDatos(): void {
+        let dato = 'Valencia'
+        this.dialogRef.close(dato);
+      }
+    ```
 7. Crear el contenido del modal
 
    ```html
@@ -66,9 +74,10 @@ Los pasos a seguir serán los siguientes:
    <div mat-dialog-content>
      <p>{{ data.mensaje }}</p>
    </div>
-   <div mat-dialog-actions align="end">
-     <button mat-button (click)="onCerrarClick()">Entendido</button>
-   </div>
+   <div mat-dialog-actions>
+    <button mat-button (click)="modalCerrar()">Cerrar</button>
+    <button mat-button (click)="modalCerrarDatos()">Cerrar con Datos</button>
+  </div>
    ```
 
    💡 Texto con idea
@@ -76,16 +85,15 @@ Los pasos a seguir serán los siguientes:
    > [!NOTE]  
    > Salva information that users should take into account, even when skimming.
 
-Puntos importantes del componente de contenido:
+En el componente utilizamos directivas de Angular Material para estructurar y dar estilos predefinidos al modal.
+- mat-dialog-title
+- mat-dialog-content
+- mat-dialog-actions
 
-MAT_DIALOG_DATA: Este token de inyección se utiliza para recibir datos que el componente que abre el modal le pasa.
-MatDialogRef: Es una referencia al modal que se ha abierto. Lo utilizas para cerrar el modal (dialogRef.close()) y, opcionalmente, pasar datos de vuelta al componente que lo abrió.
-mat-dialog-title, mat-dialog-content, mat-dialog-actions: Son directivas de Angular Material que estructuran el contenido del modal y le dan estilos predefinidos.
-[mat-dialog-close]: Una directiva útil en los botones para cerrar automáticamente el modal y pasar el valor especificado como resultado.
-4. Abrir el modal desde otro componente (ej. AppComponent)
-Ahora, en el componente desde el que quieres abrir el modal (por ejemplo, tu AppComponent), inyecta el servicio MatDialog y úsalo para abrir tu MyModalContentComponent.
+8. Abrir el modal desde otro componente (ej. AppComponent)
 
-src/app/app.component.ts
+En el componente desde el que queramos abrir el modal (por ejemplo, AppComponent), inyectamos el servicio MatDialog 
+
 
 TypeScript
 

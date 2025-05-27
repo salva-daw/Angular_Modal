@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
-import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog'; // Importa MatDialogModule, MAT_DIALOG_DATA y MatDialogRef
-
+import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 export interface Cliente {
   dni: string;
@@ -9,25 +9,25 @@ export interface Cliente {
 
 @Component({
   selector: 'app-modal',
-  imports: [MatDialogModule],
+  imports: [MatDialogModule, MatButtonModule],
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.css'
 })
 
 
 export class ModalComponent {
-  clienteSeleccionado!: Cliente
 
   constructor(
     public dialogRef: MatDialogRef<ModalComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { mensaje: string } // Inyecta los datos pasados al diálogo
+    @Inject(MAT_DIALOG_DATA) public data: { mensaje: string }
   ) { }
 
-  onCerrarClick(): void {
-    this.clienteSeleccionado = {
-      dni: "112345",
-      nombre: "Pepe Perez",
-    }
-    this.dialogRef.close(this.clienteSeleccionado); // Cierra el diálogo y opcionalmente pasa un resultado
+  modalCerrar(): void {
+    this.dialogRef.close();
+  }
+
+  modalCerrarDatos(): void {
+    let dato = 'Valencia'
+    this.dialogRef.close(dato);
   }
 }

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { MatButtonModule } from '@angular/material/button'; // Importa MatButtonModule
-import { MatDialog } from '@angular/material/dialog'; // Importa MatDialog
-import { Cliente, ModalComponent } from './modal/modal.component' // Importa el componente del diálogo
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialog } from '@angular/material/dialog';
+import { Cliente, ModalComponent } from './modal/modal.component'
 
 
 @Component({
@@ -14,7 +14,7 @@ import { Cliente, ModalComponent } from './modal/modal.component' // Importa el 
 
 export class AppComponent {
 
-  clienteRecibido!: Cliente | null;
+  datoRecibido!: string | null;
 
   constructor(public dialog: MatDialog) { }
 
@@ -22,16 +22,15 @@ export class AppComponent {
     const dialogRef = this.dialog.open(ModalComponent, {
       width: '300px', // Define el ancho del diálogo
       height: '300px',
-      data: { mensaje: '¡Este es un mensaje desde un diálogo Standalone!' } // Datos que quieres pasar al diálogo
+      data: { mensaje: '¡Este es un mensaje desde un diálogo Standalone!' }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       // El 'result' contendrá el valor que pasamos a dialogRef.close()
       if (result) {
-        this.clienteRecibido = result;
-        console.log('Cliente recibido del diálogo:', this.clienteRecibido);
+        this.datoRecibido = result;
+        console.log('Dato recibido del diálogo:', this.datoRecibido);
       } else {
-        this.clienteRecibido = null;
         console.log('El diálogo se cerró sin pasar datos o con datos nulos.');
       }
     });
