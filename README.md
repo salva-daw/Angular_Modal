@@ -61,14 +61,14 @@ Los pasos a seguir serán los siguientes:
       }
       ```
 
-  Si quisieramos pasar datos al componente que llama al modal deberiamos de pasarlos como parametro dentro del método close
+    Si quisieramos pasar datos al componente que llama al modal deberiamos de pasarlos como parametro dentro del método close
 
-   ```typescript
-  modalCerrarDatos(): void {
-    let dato = 'Valencia'
-    this.dialogRef.close(dato);
-  }
-   ```
+    ```typescript
+    modalCerrarDatos(): void {
+      let dato = 'Valencia'
+      this.dialogRef.close(dato);
+    }
+    ```
 7. Crear el contenido del modal
 
     ```html
@@ -92,36 +92,37 @@ Los pasos a seguir serán los siguientes:
 
 8. Abrir el modal desde otro componente (ej. AppComponent)
 
-  En el componente desde el que queramos abrir el modal (por ejemplo, AppComponent), inyectamos el servicio MatDialog y el componente Modal que hemos creado
+    En el componente desde el que queramos abrir el modal (por ejemplo, AppComponent), inyectamos el servicio MatDialog y el componente Modal que hemos creado
 
+    ```typescript
+    import { MatDialog } from '@angular/material/dialog';
+    import { ModalComponent } from './modal/modal.component'
+    ```
+    Definimos una variable de tipo string o null para almacenar el dato que recibamos del modal cuando se cierre.
+    
+    ```typescript
+    datoRecibido!: string | null;
+    ```
+    Inyectamos el servicio MattDialog en el constructor
+    ```typescript
+    constructor(public dialog: MatDialog) { }
+    ```
+    Definimos un método para poder abrir el modal y nos suscribimos para recibir el resultado cuando el modal se cierra
   ```typescript
-  import { MatDialog } from '@angular/material/dialog';
-  import { ModalComponent } from './modal/modal.component'
-  ```
-  Definimos una variable de tipo string o null para almacenar el dato que recibamos del modal cuando se cierre.
-  ```typescript
-  datoRecibido!: string | null;
-  ```
-  Inyectamos el servicio MattDialog en el constructor
-  ```typescript
-  constructor(public dialog: MatDialog) { }
-  ```
-  Definimos un método para poder abrir el modal y nos suscribimos para recibir el resultado cuando el modal se cierra
-```typescript
-  abrirDialogo(): void {
-    const dialogRef = this.dialog.open(ModalComponent, {
-      width: '300px', 
-      height: '300px',
-      data: { mensaje: '¡Este es un mensaje desde un diálogo Standalone!' }
-    });
+    abrirDialogo(): void {
+      const dialogRef = this.dialog.open(ModalComponent, {
+        width: '300px', 
+        height: '300px',
+        data: { mensaje: '¡Este es un mensaje desde un diálogo Standalone!' }
+      });
 
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        this.datoRecibido = result;
-        console.log('Dato recibido del diálogo:', this.datoRecibido);
-      } else {
-        console.log('El diálogo se cerró sin pasar datos o con datos nulos.');
-      }
-    });
-  }
-  ```
+      dialogRef.afterClosed().subscribe(result => {
+        if (result) {
+          this.datoRecibido = result;
+          console.log('Dato recibido del diálogo:', this.datoRecibido);
+        } else {
+          console.log('El diálogo se cerró sin pasar datos o con datos nulos.');
+        }
+      });
+    }
+    ```
