@@ -7,8 +7,7 @@
 Los pasos a seguir serán los siguientes:
 
 1. Instalar Angular Material
-  Si aún no lo tenemos, deberemos instalar Angular Material en nuestro proyecto:
-
+  Si aún no lo tenemos, deberemos instalar Angular Material en nuestro proyecto
   ```bash
   ng add @angular/material
   ```
