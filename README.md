@@ -60,10 +60,8 @@ Los pasos a seguir serán los siguientes:
           this.dialogRef.close();
         }
       ```
-      
-  💡 Texto con idea
-> [!NOTE]  
-> Si quisieramos pasar datos al componente que llama al modal deberiamos de pasarlos como parametro dentro del método close
+
+  Si quisieramos pasar datos al componente que llama al modal deberiamos de pasarlos como parametro dentro del método close
 
    ```typescript
       modalCerrarDatos(): void {
