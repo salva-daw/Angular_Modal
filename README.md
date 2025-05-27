@@ -32,14 +32,14 @@ Los pasos a seguir serán los siguientes:
 
 4.  Cofigurar el decorador @component con MatDialogModule
 
-  ```typescript
-  @Component({
-  selector: 'app-modal',
-  imports: [MatDialogModule, MatButtonModule],
-  templateUrl: './modal.component.html',
-  styleUrl: './modal.component.css'
-  })
-  ```
+    ```typescript
+    @Component({
+    selector: 'app-modal',
+    imports: [MatDialogModule, MatButtonModule],
+    templateUrl: './modal.component.html',
+    styleUrl: './modal.component.css'
+    })
+    ```
 5.  Inyectar el servicio en el componente
 
     ```typescript
@@ -54,12 +54,13 @@ Los pasos a seguir serán los siguientes:
 
 6. Configurar un método para cerra el modal
 
-  Utilizamos la referencia this.dialogRef creada en el constructor para poder cerrarlo mediante el método close().
-    ```typescript
-      modalCerrar(): void {
-        this.dialogRef.close();
-      }
-    ```
+    Utilizamos la referencia this.dialogRef creada en el constructor para poder cerrarlo mediante el método close().
+      ```typescript
+        modalCerrar(): void {
+          this.dialogRef.close();
+        }
+      ```
+      
   💡 Texto con idea
 > [!NOTE]  
 > Si quisieramos pasar datos al componente que llama al modal deberiamos de pasarlos como parametro dentro del método close
