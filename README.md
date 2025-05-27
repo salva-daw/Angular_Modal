@@ -108,28 +108,28 @@ Los pasos a seguir serán los siguientes:
     constructor(public dialog: MatDialog) { }
     ```
     Definimos un método para poder abrir el modal y nos suscribimos para recibir el resultado cuando el modal se cierra
-  ```typescript
-    abrirDialogo(): void {
-      const dialogRef = this.dialog.open(ModalComponent, {
-        width: '300px', 
-        height: '300px',
-        data: { mensaje: '¡Este es un mensaje desde un diálogo Standalone!' }
-      });
+    ```typescript
+      abrirDialogo(): void {
+        const dialogRef = this.dialog.open(ModalComponent, {
+          width: '300px', 
+          height: '300px',
+          data: { mensaje: '¡Este es un mensaje desde un diálogo Standalone!' }
+        });
 
-      dialogRef.afterClosed().subscribe(result => {
-        if (result) {
-          this.datoRecibido = result;
-          console.log('Dato recibido del diálogo:', this.datoRecibido);
-        } else {
-          console.log('El diálogo se cerró sin pasar datos o con datos nulos.');
-        }
-      });
-    }
-  ```
+        dialogRef.afterClosed().subscribe(result => {
+          if (result) {
+            this.datoRecibido = result;
+            console.log('Dato recibido del diálogo:', this.datoRecibido);
+          } else {
+            console.log('El diálogo se cerró sin pasar datos o con datos nulos.');
+          }
+        });
+      }
+    ```
 
   9. Definimos en el HTML del AppComponent un boton para poder abrir el modal
 
     ```typescript
-  <button mat-raised-button color="primary" 
-  (click)="abrirDialogo()">Abrir</button>
+    <button mat-raised-button color="primary" 
+    (click)="abrirDialogo()">Abrir</button>
     ```
