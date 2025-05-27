@@ -17,18 +17,18 @@ Los pasos a seguir serán los siguientes:
 
 2. Creamos el componente que utilizaremos como ventana modal.
 
-  ```bash
-  ng g c modal
-  ```
+    ```bash
+    ng g c modal
+    ```
 
 3. Importar el módulo MatDialogModule en el fichero modal.ts
 
-  ```typescript
-  import { Component, Inject } from "@angular/core";
-  import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog"; 
-  import { MatButtonModule } from '@angular/material/button';
-  ```
-  Importamos también el MatButtonModule para utilizar botones de Angular Material
+    ```typescript
+    import { Component, Inject } from "@angular/core";
+    import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog"; 
+    import { MatButtonModule } from '@angular/material/button';
+    ```
+    Importamos también el MatButtonModule para utilizar botones de Angular Material
 
 4.  Cofigurar el decorador @component con MatDialogModule
 
