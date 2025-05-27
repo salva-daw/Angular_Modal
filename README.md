@@ -49,7 +49,7 @@ Los pasos a seguir serán los siguientes:
     - MatDialogRef: Es una referencia al modal que se ha abierto. Lo utilizaremos para cerrar el modal (dialogRef.close()) y, opcionalmente, pasar datos de vuelta al componente que lo abrió.
     - MAT_DIALOG_DATA: Este token de inyección se utiliza para recibir datos que el componente que abre el modal le pasa.
 
-6.  Configurar un método para cerra el modal
+6. Configurar un método para cerra el modal
 
     Utilizamos la referencia this.dialogRef creada en el constructor para poder cerrarlo mediante el método close().
     ```typescript
