@@ -90,9 +90,9 @@ Los pasos a seguir serán los siguientes:
 
     En el contenido del dialog interpolamos el dato recibido desde el componente que llama al modal con data.mensaje
 
-8. Abrir el modal desde otro componente (ej. AppComponent)
+8. Abrir el modal desde otro componente en nuestro caso desde AppComponent
 
-    En el componente desde el que queramos abrir el modal (por ejemplo, AppComponent), inyectamos el servicio MatDialog y el componente Modal que hemos creado
+    En AppComponent importamos el servicio MatDialog y el componente Modal que hemos creado
 
     ```typescript
     import { MatDialog } from '@angular/material/dialog';
@@ -103,7 +103,7 @@ Los pasos a seguir serán los siguientes:
     ```typescript
     datoRecibido!: string | null;
     ```
-    Inyectamos el servicio MattDialog en el constructor
+    Inyectamos el servicio MatDialog en el constructor
     ```typescript
     constructor(public dialog: MatDialog) { }
     ```
@@ -126,3 +126,10 @@ Los pasos a seguir serán los siguientes:
       });
     }
   ```
+
+  9. Definimos en el HTML del AppComponent un boton para poder abrir el modal
+
+    ```typescript
+  <button mat-raised-button color="primary" 
+  (click)="abrirDialogo()">Abrir</button>
+    ```
