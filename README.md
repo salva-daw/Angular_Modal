@@ -69,24 +69,24 @@ Los pasos a seguir serán los siguientes:
    ```
 7. Crear el contenido del modal
 
-  ```html
-   <div mat-dialog-title style="display:flex; justify-content:space-between; align-items:center;">
-      Titulo del Modal
-   </div>
-   <div mat-dialog-content>
-     <p>{{ data.mensaje }}</p>
-   </div>
-   <div mat-dialog-actions>
-    <button mat-button (click)="modalCerrar()">Cerrar</button>
-    <button mat-button (click)="modalCerrarDatos()">Cerrar con Datos</button>
-  </div>
-  ```
-En el componente utilizamos directivas de Angular Material para estructurar y dar estilos predefinidos al modal.
-- mat-dialog-title
-- mat-dialog-content
-- mat-dialog-actions
+    ```html
+    <div mat-dialog-title style="display:flex; justify-content:space-between; align-items:center;">
+        Titulo del Modal
+    </div>
+    <div mat-dialog-content>
+      <p>{{ data.mensaje }}</p>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button (click)="modalCerrar()">Cerrar</button>
+      <button mat-button (click)="modalCerrarDatos()">Cerrar con Datos</button>
+    </div>
+    ```
+  En el componente utilizamos directivas de Angular Material para estructurar y dar estilos predefinidos al modal.
+  - mat-dialog-title
+  - mat-dialog-content
+  - mat-dialog-actions
 
-En el contenido del dialog interpolamos el dato recibido desde el componente que llama al modal con data.mensaje
+  En el contenido del dialog interpolamos el dato recibido desde el componente que llama al modal con data.mensaje
 
 8. Abrir el modal desde otro componente (ej. AppComponent)
 
