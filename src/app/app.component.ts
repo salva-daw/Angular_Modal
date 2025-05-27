@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
-import { Cliente, ModalComponent } from './modal/modal.component'
-
+import { ModalComponent } from './modal/modal.component'
 
 @Component({
   selector: 'app-root',
@@ -20,7 +19,7 @@ export class AppComponent {
 
   abrirDialogo(): void {
     const dialogRef = this.dialog.open(ModalComponent, {
-      width: '300px', // Define el ancho del diálogo
+      width: '300px',
       height: '300px',
       data: { mensaje: '¡Este es un mensaje desde un diálogo Standalone!' }
     });

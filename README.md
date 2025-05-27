@@ -86,67 +86,40 @@ En el componente utilizamos directivas de Angular Material para estructurar y da
 - mat-dialog-content
 - mat-dialog-actions
 
-En el contenido del dialog interpolamos el dato recibido desde el componente que llama al modal
+En el contenido del dialog interpolamos el dato recibido desde el componente que llama al modal con data.mensaje
 
 8. Abrir el modal desde otro componente (ej. AppComponent)
 
-En el componente desde el que queramos abrir el modal (por ejemplo, AppComponent), inyectamos el servicio MatDialog 
+  En el componente desde el que queramos abrir el modal (por ejemplo, AppComponent), inyectamos el servicio MatDialog y el componente Modal que hemos creado
 
+  ```typescript
+  import { MatDialog } from '@angular/material/dialog';
+  import { ModalComponent } from './modal/modal.component'
+  ```
+  Definimos una variable de tipo string o null para almacenar el dato que recibamos del modal cuando se cierre.
+  ```typescript
+  datoRecibido!: string | null;
+  ```
+  Inyectamos el servicio MattDialog en el constructor
+  ```typescript
+  constructor(public dialog: MatDialog) { }
+  ```
+  Definimos un método para poder abrir el modal y nos suscribimos para recibir el resultado cuando el modal se cierra
+```typescript
+  abrirDialogo(): void {
+    const dialogRef = this.dialog.open(ModalComponent, {
+      width: '300px', 
+      height: '300px',
+      data: { mensaje: '¡Este es un mensaje desde un diálogo Standalone!' }
+    });
 
-TypeScript
-
-import { Component } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { MyModalContentComponent } from './components/my-modal-content/my-modal-content.component';
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
-export class AppComponent {
-  title = 'angular-material-modal';
-  resultFromModal: string | undefined;
-
-  constructor(public dialog: MatDialog) {}
-
-  openModal(): void {
-    const dialogRef = this.dialog.open(MyModalContentComponent, {
-      width: '400px', // Ancho del modal
-      data: {
-        title: 'Mi Modal Personalizado',
-        message: '¡Hola desde el componente principal!'
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.datoRecibido = result;
+        console.log('Dato recibido del diálogo:', this.datoRecibido);
+      } else {
+        console.log('El diálogo se cerró sin pasar datos o con datos nulos.');
       }
     });
-
-    // Suscribirse para recibir el resultado cuando el modal se cierra
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('El modal se ha cerrado.');
-      console.log('Resultado del modal:', result);
-      this.resultFromModal = result; // Guarda el resultado
-    });
   }
-}
-src/app/app.component.html
-
-HTML
-
-<div style="text-align:center; padding: 20px;">
-  <h1>Bienvenido a {{ title }}!</h1>
-
-  <button mat-raised-button color="primary" (click)="openModal()">Abrir Modal</button>
-
-  <p *ngIf="resultFromModal">Resultado del modal: {{ resultFromModal }}</p>
-</div>
-Explicación del MatDialog Service:
-this.dialog.open(MyModalContentComponent, config): Este es el método principal para abrir un modal.
-El primer argumento es la clase de tu componente de contenido (MyModalContentComponent).
-El segundo argumento es un objeto de configuración (MatDialogConfig) donde puedes especificar:
-width, height, minWidth, maxWidth, minHeight, maxHeight: Dimensiones del modal.
-data: Un objeto que se pasará al componente de contenido a través del token MAT_DIALOG_DATA.
-disableClose: true para evitar que el modal se cierre al hacer clic fuera de él o presionar Escape.
-hasBackdrop: true para mostrar un fondo oscuro detrás del modal.
-panelClass: Una clase CSS para aplicar estilos personalizados al panel del modal.
-backdropClass: Una clase CSS para aplicar estilos al fondo del modal.
-Y muchas otras opciones para un control detallado.
-dialogRef.afterClosed().subscribe(...): Cuando llamas a dialog.open(), te devuelve un MatDialogRef. Este dialogRef tiene un Observable llamado afterClosed() al que puedes suscribirte para recibir el valor que se pasó cuando el modal se cerró (por ejemplo, con dialogRef.close(value) o [mat-dialog-close]="value").
+  ```
