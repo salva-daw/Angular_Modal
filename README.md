@@ -99,7 +99,7 @@ Los pasos a seguir serán los siguientes:
     import { ModalComponent } from './modal/modal.component'
     ```
     Definimos una variable de tipo string o null para almacenar el dato que recibamos del modal cuando se cierre.
-    
+
     ```typescript
     datoRecibido!: string | null;
     ```
@@ -125,4 +125,4 @@ Los pasos a seguir serán los siguientes:
         }
       });
     }
-    ```
+  ```
