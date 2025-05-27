@@ -9,35 +9,36 @@ Los pasos a seguir serán los siguientes:
 1. Instalar Angular Material
 Si aún no lo tenemos, deberemos instalar Angular Material en nuestro proyecto:
 
-```bash
-ng add @angular/material
-```
-Durante la instalación, nos preguntará sobre un tema, tipografía y si queremos incluir animaciones. Eligimos las opciones que prefiramos.
+  ```bash
+  ng add @angular/material
+  ```
+  Durante la instalación, nos preguntará sobre un tema, tipografía y si queremos incluir animaciones. Eligimos las opciones que prefiramos.
 
 2. Creamos el componente que utilizaremos como ventana modal.
 
-```bash
-ng g c modal
-```
+  ```bash
+  ng g c modal
+  ```
 
 3. Importar el módulo MatDialogModule en el fichero modal.ts
 
-```typescript
-import { Component, Inject } from "@angular/core";
-import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog"; 
-import { MatButtonModule } from '@angular/material/button';
-```
-Importamos también el MatButtonModule para utilizar botones de Angular Material
+  ```typescript
+  import { Component, Inject } from "@angular/core";
+  import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog"; 
+  import { MatButtonModule } from '@angular/material/button';
+  ```
+  Importamos también el MatButtonModule para utilizar botones de Angular Material
 
 4.  Cofigurar el decorador @component con MatDialogModule
-    ```typescript
-    @Component({
-    selector: 'app-modal',
-    imports: [MatDialogModule, MatButtonModule],
-    templateUrl: './modal.component.html',
-    styleUrl: './modal.component.css'
-    })
-    ```
+
+  ```typescript
+  @Component({
+  selector: 'app-modal',
+  imports: [MatDialogModule, MatButtonModule],
+  templateUrl: './modal.component.html',
+  styleUrl: './modal.component.css'
+  })
+  ```
 5.  Inyectar el servicio en el componente
 
     ```typescript
