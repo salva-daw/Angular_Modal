@@ -54,9 +54,10 @@ Los pasos a seguir serán los siguientes:
     Utilizamos la referencia this.dialogRef creada en el constructor para poder cerrarlo mediante el método close().
     ```typescript
       modalCerrar(): void {
-      this.dialogRef.close();
+        this.dialogRef.close();
       }
     ```
+  💡 Texto con idea
 > [!NOTE]  
 > Si quisieramos pasar datos al componente que llama al modal deberiamos de pasarlos como parametro dentro del método close
 
@@ -80,17 +81,12 @@ Los pasos a seguir serán los siguientes:
     <button mat-button (click)="modalCerrarDatos()">Cerrar con Datos</button>
   </div>
   ```
-   
-
-   💡 Texto con idea
-
-   > [!NOTE]  
-   > Salva information that users should take into account, even when skimming.
-
 En el componente utilizamos directivas de Angular Material para estructurar y dar estilos predefinidos al modal.
 - mat-dialog-title
 - mat-dialog-content
 - mat-dialog-actions
+
+En el contenido del dialog interpolamos el dato recibido desde el componente que llama al modal
 
 8. Abrir el modal desde otro componente (ej. AppComponent)
 
