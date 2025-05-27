@@ -54,14 +54,15 @@ Los pasos a seguir serán los siguientes:
       this.dialogRef.close();
       }
     ```
-  > [!NOTE]  
-  > Si quisieramos pasar datos al componente que llama al modal deberiamos de pasarlos como parametro dentro del método close this.dialogRef.close(dato)
+    > [!NOTE]  
+    > Si quisieramos pasar datos al componente que llama al modal deberiamos de pasarlos como parametro dentro del método close this.dialogRef.close(dato)
 
 7. Crear el contenido del modal
 
    ```html
    <div mat-dialog-title style="display: flex; justify-content: space-between; align-items: center;">
-   Titulo del Modal</div>
+      Titulo del Modal
+   </div>
    <div mat-dialog-content>
      <p>{{ data.mensaje }}</p>
    </div>
