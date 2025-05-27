@@ -56,18 +56,18 @@ Los pasos a seguir serán los siguientes:
 
     Utilizamos la referencia this.dialogRef creada en el constructor para poder cerrarlo mediante el método close().
       ```typescript
-        modalCerrar(): void {
-          this.dialogRef.close();
-        }
+      modalCerrar(): void {
+        this.dialogRef.close();
+      }
       ```
 
   Si quisieramos pasar datos al componente que llama al modal deberiamos de pasarlos como parametro dentro del método close
 
    ```typescript
-      modalCerrarDatos(): void {
-        let dato = 'Valencia'
-        this.dialogRef.close(dato);
-      }
+  modalCerrarDatos(): void {
+    let dato = 'Valencia'
+    this.dialogRef.close(dato);
+  }
    ```
 7. Crear el contenido del modal
 
