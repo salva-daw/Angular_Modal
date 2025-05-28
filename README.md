@@ -17,10 +17,9 @@ Los pasos a seguir serán los siguientes:
 
    
 
-> [!NOTE]
-> ### 💡 Idea:
-> 
->       Hola
+    ###💡 Idea:
+    Texto de la idea
+
 
 3. Creamos el componente que utilizaremos como ventana modal.
 
