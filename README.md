@@ -17,7 +17,8 @@ Los pasos a seguir serán los siguientes:
 
    
 
-> [!NOTE]  ### 💡 **Tip:** Aquí hay un consejo útil.
+> [!NOTE]
+> ### 💡 **Tip:** Aquí hay un consejo útil.
 > 
 >       Hola
 
