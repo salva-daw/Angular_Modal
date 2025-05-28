@@ -17,6 +17,10 @@ Los pasos a seguir serán los siguientes:
 
    💡 **Tip:** No olvides guardar tus cambios con frecuencia.
 
+   # 💡 **Tip:** ¡Una idea genial!
+  ## 💡 **Tip:** ¡Una idea más pequeña, pero aún grande!
+  ### 💡 **Tip:** Aquí hay un consejo útil.
+
 > [!NOTE]
 > 
 >       Hola
