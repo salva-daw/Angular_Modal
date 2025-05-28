@@ -18,7 +18,7 @@ Los pasos a seguir serán los siguientes:
    
 
 > [!NOTE]
-> ### 💡 **Tip:** Aquí hay un consejo útil.
+> ### 💡 Idea:
 > 
 >       Hola
 
