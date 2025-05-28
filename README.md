@@ -15,13 +15,16 @@ Los pasos a seguir serán los siguientes:
   
     Durante la instalación, nos preguntará sobre un tema, tipografía y si queremos incluir animaciones. Eligimos las opciones que prefiramos.
 
-2. Creamos el componente que utilizaremos como ventana modal.
+> [!NOTE]
+> Este es un consejo importante.
+
+3. Creamos el componente que utilizaremos como ventana modal.
 
     ```bash
     ng g c modal
     ```
 
-3. Importar el módulo MatDialogModule en el fichero modal.ts
+4. Importar el módulo MatDialogModule en el fichero modal.ts
 
     ```typescript
     import { Component, Inject } from "@angular/core";
@@ -30,7 +33,7 @@ Los pasos a seguir serán los siguientes:
     ```
     Importamos también el MatButtonModule para utilizar botones de Angular Material
 
-4.  Cofigurar el decorador @component con MatDialogModule
+5.  Cofigurar el decorador @component con MatDialogModule
 
     ```typescript
     @Component({
@@ -40,7 +43,7 @@ Los pasos a seguir serán los siguientes:
     styleUrl: './modal.component.css'
     })
     ```
-5.  Inyectar el servicio en el componente
+6.  Inyectar el servicio en el componente
 
     ```typescript
     constructor(
@@ -52,7 +55,7 @@ Los pasos a seguir serán los siguientes:
     - MatDialogRef: Es una referencia al modal que se ha abierto. Lo utilizaremos para cerrar el modal (dialogRef.close()) y, opcionalmente, pasar datos de vuelta al componente que lo abrió.
     - MAT_DIALOG_DATA: Este token de inyección se utiliza para recibir datos que el componente que abre el modal le pasa.
 
-6. Configurar un método para cerra el modal
+7. Configurar un método para cerra el modal
 
     Utilizamos la referencia this.dialogRef creada en el constructor para poder cerrarlo mediante el método close().
       ```typescript
@@ -69,7 +72,7 @@ Los pasos a seguir serán los siguientes:
       this.dialogRef.close(dato);
     }
     ```
-7. Crear el contenido del modal
+8. Crear el contenido del modal
 
     ```html
     <div mat-dialog-title style="display:flex; justify-content:space-between; align-items:center;">
@@ -90,7 +93,7 @@ Los pasos a seguir serán los siguientes:
 
     En el contenido del dialog interpolamos el dato recibido desde el componente que llama al modal con data.mensaje
 
-8. Abrir el modal desde otro componente en nuestro caso desde AppComponent
+9. Abrir el modal desde otro componente en nuestro caso desde AppComponent
 
     En AppComponent importamos el servicio MatDialog y el componente Modal que hemos creado
 
@@ -127,7 +130,7 @@ Los pasos a seguir serán los siguientes:
       }
     ```
 
-9. Definimos en el HTML del AppComponent un boton para poder abrir el modal
+10. Definimos en el HTML del AppComponent un boton para poder abrir el modal
     ```html
     <button mat-raised-button color="primary" (click)="abrirDialogo()">Abrir</button>
     ````
