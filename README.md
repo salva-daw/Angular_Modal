@@ -15,11 +15,7 @@ Los pasos a seguir serán los siguientes:
   
     Durante la instalación, nos preguntará sobre un tema, tipografía y si queremos incluir animaciones. Eligimos las opciones que prefiramos.
 
-   💡 **Tip:** No olvides guardar tus cambios con frecuencia.
-
-   # 💡 **Tip:** ¡Una idea genial!
-  ## 💡 **Tip:** ¡Una idea más pequeña, pero aún grande!
-  ### 💡 **Tip:** Aquí hay un consejo útil.
+    ### 💡 **Tip:** Aquí hay un consejo útil.
 
 > [!NOTE]
 > 
