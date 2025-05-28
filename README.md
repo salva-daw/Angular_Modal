@@ -16,8 +16,7 @@ Los pasos a seguir serán los siguientes:
     Durante la instalación, nos preguntará sobre un tema, tipografía y si queremos incluir animaciones. Eligimos las opciones que prefiramos.
 
    
-
-    ###💡 Idea:
+###💡 Idea:
     Texto de la idea
 
 
